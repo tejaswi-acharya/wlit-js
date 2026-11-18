@@ -22,7 +22,12 @@
 //     console.log(a);
 // }
 
-console.log(x);
-let x =2;
+// console.log(x);
+// let x =2;
+
+let _x=10;
+let $y = 20;
+
+let 4x = 30; // this is invalid variable name because variable name cannot start with a number. 
 
 
