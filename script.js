@@ -25,10 +25,24 @@
 // console.log(x);
 // let x =2;
 
+
 // let _x=10;
 // let $y = 20;
+// // let 4x = 30; // this is invalid variable name because variable name cannot start with a number. 
+// let x =50;
+// console.log(x>50?"a":"b");
 
-// let 4x = 30; // this is invalid variable name because variable name cannot start with a number. 
-let x =50;
-console.log(x>50?"a":"b");
+
+let grade = 10;
+
+if (grade>=90){
+    console.log("A");
+} else if (grade>=80){
+    console.log("B");
+} else if (grade>=80){
+    console.log("C");
+} else {
+    console.log("D");
+}
+
 
