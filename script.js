@@ -46,17 +46,27 @@
 // }
 
 
-let x = 50;
-switch(x){
-    case 1:
-        console.log("Print 1");
-        break;
-    case 2:
-        console.log("Print 2");
-        break;
-    case 3:
-        console.log("Print 3");
-        break;
-    default:
-        console.log("Print 4");
+// let x = 50;
+// switch(x){
+//     case 1:
+//         console.log("Print 1");
+//         break;
+//     case 2:
+//         console.log("Print 2");
+//         break;
+//     case 3:
+//         console.log("Print 3");
+//         break;
+//     default:
+//         console.log("Print 4");
+// }
+
+// while(condition){
+//     statements
+// }
+
+let x =22;
+while (x<28){
+    console.log(x);
+    x++;
 }
