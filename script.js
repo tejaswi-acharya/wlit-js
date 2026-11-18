@@ -120,7 +120,18 @@
 //to find the largest num in an array given as a parameter
 let a =[1,2,3,4,5,6,7,8,9,10];
 
-function findlarge(a){
+// function findlarge(a){
+//     let max = a[0];
+//     for(let i=0;i<a.length;i++){
+//         if(a[i]>max){
+//             max = a[i];
+//         }
+//     }
+//     console.log("The largest number in the array is: "+max);
+// }
+// findlarge(a);
+
+var findlarge = (a)=>{
     let max = a[0];
     for(let i=0;i<a.length;i++){
         if(a[i]>max){
@@ -129,4 +140,5 @@ function findlarge(a){
     }
     console.log("The largest number in the array is: "+max);
 }
+
 findlarge(a);
