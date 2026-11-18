@@ -96,12 +96,21 @@
 
 //write a js fun that accepts a num as a parameter and checks whether the number is positve or not
 
-function check(num){
+// function check(num){
+//     if(num>0){
+//         console.log("The number is positive");
+//     } else {
+//         console.log("The number is not positive");
+//     }
+// }
+
+// check(2);
+
+var check = (num)=>{
     if(num>0){
         console.log("The number is positive");
     } else {
         console.log("The number is not positive");
     }
 }
-
-check(2);
+check(-5);
