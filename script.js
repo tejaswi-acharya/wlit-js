@@ -91,5 +91,17 @@
 // console.log(multiply(2,4));
 
 
-var dosomething = ()=>{console.log("this is a random arrow function hahhaha");}
-dosomething();
+// var dosomething = ()=>{console.log("this is a random arrow function hahhaha");}
+// dosomething();
+
+//write a js fun that accepts a num as a parameter and checks whether the number is positve or not
+
+function check(num){
+    if(num>0){
+        console.log("The number is positive");
+    } else {
+        console.log("The number is not positive");
+    }
+}
+
+check(2);
