@@ -65,8 +65,13 @@
 //     statements
 // }
 
-let x =22;
-while (x<28){
-    console.log(x);
-    x++;
-}
+// let x =22;
+// while (x<28){
+//     console.log(x);
+//     x++;
+// }
+let x =0;
+do{
+    console.log("this si a do whjile loop "+x);
+        x++;
+}while(x<5);
