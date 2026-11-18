@@ -33,16 +33,30 @@
 // console.log(x>50?"a":"b");
 
 
-let grade = 10;
+// let grade = 10;
 
-if (grade>=90){
-    console.log("A");
-} else if (grade>=80){
-    console.log("B");
-} else if (grade>=80){
-    console.log("C");
-} else {
-    console.log("D");
+// if (grade>=90){
+//     console.log("A");
+// } else if (grade>=80){
+//     console.log("B");
+// } else if (grade>=80){
+//     console.log("C");
+// } else {
+//     console.log("D");
+// }
+
+
+let x = 50;
+switch(x){
+    case 1:
+        console.log("Print 1");
+        break;
+    case 2:
+        console.log("Print 2");
+        break;
+    case 3:
+        console.log("Print 3");
+        break;
+    default:
+        console.log("Print 4");
 }
-
-
