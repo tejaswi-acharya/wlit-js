@@ -106,11 +106,27 @@
 
 // check(2);
 
-var check = (num)=>{
-    if(num>0){
-        console.log("The number is positive");
-    } else {
-        console.log("The number is not positive");
+// var check = (num)=>{
+//     if(num>0){
+//         console.log("The number is positive");
+//     } else {
+//         console.log("The number is not positive");
+//     }
+// }
+// check(-5);
+
+
+
+//to find the largest num in an array given as a parameter
+let a =[1,2,3,4,5,6,7,8,9,10];
+
+function findlarge(a){
+    let max = a[0];
+    for(let i=0;i<a.length;i++){
+        if(a[i]>max){
+            max = a[i];
+        }
     }
+    console.log("The largest number in the array is: "+max);
 }
-check(-5);
+findlarge(a);
