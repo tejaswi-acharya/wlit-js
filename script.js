@@ -70,8 +70,22 @@
 //     console.log(x);
 //     x++;
 // }
-let x =0;
-do{
-    console.log("this si a do whjile loop "+x);
-        x++;
-}while(x<5);
+// let x =0;
+// do{
+//     console.log("this si a do whjile loop "+x);
+//         x++;
+// }while(x<5);
+
+
+// function dosomething(){
+//     console.log("this is a function");
+// }
+// dosomething();
+
+
+
+function multiply(a,b){
+    return (a*b);
+}
+
+console.log(multiply(2,4));
