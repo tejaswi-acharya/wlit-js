@@ -48,8 +48,8 @@
 
 // let x = 50;
 // switch(x){
-//     case 1:
-//         console.log("Print 1");
+//     case 2:
+//         console.log("Print 2");
 //         break;
 //     case 2:
 //         console.log("Print 2");
@@ -118,7 +118,7 @@
 
 
 //to find the largest num in an array given as a parameter
-// let a =[1,2,3,4,5,6,7,8,9,10];
+// let a =[2,2,3,4,5,6,7,8,9,10];
 
 // // function findlarge(a){
 // //     let max = a[0];
@@ -150,16 +150,38 @@
 // findlarge(a);
 
 
-let person ={
-    name: "Tejudon",
-    address: "Biratnagar",
-    age: "20",
-    isStudent: true
-};
+// let person ={
+//     name: "Tejudon",
+//     address: "Biratnagar",
+//     age: "20",
+//     isStudent: true
+// };
 
-console.log(person);
+// console.log(person);
 
-console.log(person.age);
+// console.log(person.age);
 
-person.school = "Pulchowk Campus";
-console.log(person);
+// // person.school = "Pulchowk Campus";
+// console.log(person);
+
+
+
+//write the program to find the area of a swuare and a rectangle using js ojects with a common area function using this keyword
+
+let area = {
+    length : 5,
+    breadth: 5,
+    findarea : function(){
+
+        if(this.length==this.breadth){
+            return console.log("This is the area of a square"+this.length*this.length);
+        }
+        else{
+            return console.log("this is the area of a rectangle"+this.length*this.breadth);
+        }
+        
+    }
+
+    
+}
+area.findarea();
