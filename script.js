@@ -84,8 +84,12 @@
 
 
 
-function multiply(a,b){
-    return (a*b);
-}
+// function multiply(a,b){
+//     return (a*b);
+// }
 
-console.log(multiply(2,4));
+// console.log(multiply(2,4));
+
+
+var dosomething = ()=>{console.log("this is a random arrow function hahhaha");}
+dosomething();
