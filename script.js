@@ -118,7 +118,7 @@
 
 
 //to find the largest num in an array given as a parameter
-let a =[1,2,3,4,5,6,7,8,9,10];
+// let a =[1,2,3,4,5,6,7,8,9,10];
 
 // // function findlarge(a){
 // //     let max = a[0];
@@ -143,11 +143,23 @@ let a =[1,2,3,4,5,6,7,8,9,10];
 
 // findlarge(a);
 
-var findlarge = (a)=>{
-    return console.log(Math.max(a));
-}
+// var findlarge = (a)=>{
+//     return console.log(Math.max(a));
+// }
 
-findlarge(a);
+// findlarge(a);
 
 
+let person ={
+    name: "Tejudon",
+    address: "Biratnagar",
+    age: "20",
+    isStudent: true
+};
 
+console.log(person);
+
+console.log(person.age);
+
+person.school = "Pulchowk Campus";
+console.log(person);
