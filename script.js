@@ -7,8 +7,10 @@
 // let y = true;
 // console.log(typeof y);
 
-let a = null;
-console.log(a);
-console.log(b);
+// let a = null;
+// console.log(a);
+// console.log(b);
 
+console.log(null == undefined);
+console.log(null === undefined);
 
