@@ -9,8 +9,8 @@
 
 //getElementByClassName
 
-const container = document.getElementsByClassName('container');
-console.log(container);
+// const container = document.getElementsByClassName('container');
+// console.log(container);
 
 const title = document.getElementById('heading');
 console.log(title);
@@ -23,6 +23,11 @@ console.log(title);
 //getelementss by tag name
 const items = document.getElementsByTagName('li');
 console.log(items);
+
+
+//queryselector for query selector you have to specify whether it is class or id or tagname 
+const container = document.querySelector('.container');
+console.log(container);
 
 
 
