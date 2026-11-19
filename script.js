@@ -29,8 +29,10 @@
 // const container = document.querySelector('.container');
 // console.log(container);
 
-//querySelectorAll
+// //querySelectorAll
 
-const container = document.querySelectorAll("div");
-console.log(container);
+// const container = document.querySelectorAll("div");
+// console.log(container);
+
+
 
