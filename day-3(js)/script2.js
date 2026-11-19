@@ -6,4 +6,14 @@ const ul = document.querySelector('ul');
 console.log(ul);
 
 
+const li = document.createElement('li');
+console.log(li);
+
+//appending the element to the DOM
+ul.append(li);
+
+//modify texts
+li.innerText='Training';
+
+
 
