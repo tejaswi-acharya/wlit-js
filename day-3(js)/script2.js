@@ -18,5 +18,8 @@ li.innerText='Training';
 //modify attributes
 li.setAttribute('id','heading');
 
+//remove attributes
+li.removeAttribute('id');
+
 
 
