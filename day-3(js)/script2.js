@@ -15,5 +15,8 @@ ul.append(li);
 //modify texts
 li.innerText='Training';
 
+//modify attributes
+li.setAttribute('id','heading');
+
 
 
