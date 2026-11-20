@@ -1,16 +1,18 @@
 //predict async order
 //objective: trace mixed timers and promises
 
-console.log("1");
-setTimeout(()=> console.log("2"),0);
-Promise.resolve().then(()=> console.log("3"));
-console.log("4");
-
-//1 4 3 2 
-
-
 // console.log("1");
 // setTimeout(()=> console.log("2"),0);
-//  new Promise((resolve,reject)=> console.log("3"));
+// Promise.resolve().then(()=> console.log("3"));
 // console.log("4");
+
+// //1 4 3 2 
+
+
+console.log("1");
+setTimeout(()=> console.log("2"),0);
+ new Promise((resolve,reject)=> console.log("3"));
+console.log("4");
+
+//1342
 
