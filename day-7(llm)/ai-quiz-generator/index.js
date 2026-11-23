@@ -7,15 +7,16 @@ const ai = new GoogleGenAI({
 
 });
 
-// //2. Make our first api call 
-// async function main(){
-//     const response = await ai.generateContent({
-//         model:'gemini-3.1-flash-lite',
-//         contents:"Explain the concept of Artificial Intelligence in one sentence."
+//2. Make our first api call 
+async function main(){
+    const response = await ai.models.generateContent({
+        model:'gemini-3.1-flash-lite',
+        contents:"write me a song thats funny brainrot distrack about a guy.make it shorter use easy english words",
         
 
-//     });
-//     console.log(response.text);
-// }
+    });
+    console.log(response.text);
+}
 
+main();
 
