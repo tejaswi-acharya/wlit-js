@@ -40,7 +40,27 @@ async function main(){
         
 
     });
-    console.log(response.text);
+    
+    const quiz = JSON.parse(response.text);
+    
+    // for (const q of quiz.questions) {
+    //     console.log(`Question: ${q.question}`);
+    //     console.log(`Options: ${q.options.join(', ')}`);
+    //     console.log(`Correct Answer: ${q.correctAnswer}`);
+    //     console.log(`Difficulty: ${q.difficulty}`);
+    //     console.log('-------------------------');
+    // }
+
+quiz.questions.forEach((q,i)=>{
+        console.log(`Question ${i+1}: ${q.question}`);
+        console.log(`Options: ${q.options.join(', ')}`);
+        console.log(`Correct Answer: ${q.correctAnswer}`);
+        console.log(`Difficulty: ${q.difficulty}`);
+        console.log('-------------------------');
+
+
+});
+    
 }
 
 main();
