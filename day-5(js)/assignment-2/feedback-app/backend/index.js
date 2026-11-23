@@ -36,7 +36,13 @@ app.post("/api/feedback", (req, res) => {
   // - Create a newFeedback object { id: nextId++, name, message }
   // - Add it to the top of `feedbacks` using .unshift()
   // - Return status 201 with the newFeedback JSON
-
+  const newFeedback={
+    id: nextId++,
+    name: name,
+    message: message
+  };
+feedbacks.unshift(newFeedback);
+return res.status(201).json(newFeedback);
 
 });
 
