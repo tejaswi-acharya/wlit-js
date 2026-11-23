@@ -8,10 +8,10 @@ const ai = new GoogleGenAI({
 });
 
 //2. Make our first api call 
-async function main(){
+async function main(noQuestions,topic){
     const response = await ai.models.generateContent({
         model:'gemini-3.1-flash-lite',
-        contents:"make me a quiz with 2 questions about surviving on Data Communication",
+        contents:`Create a ${noQuestions} questions quiz  on topic ${topic}`,
         config:{
             systemInstructions: "You are a helpful quiz generator. Create multiple choice questions with 4 options and the questions should be clear and concise.",
         
@@ -63,8 +63,25 @@ quiz.questions.forEach((q,i)=>{
     
 }
 
-main();
+import readline from "node:readline";
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+
+});
+
+rl.question("Enter the number of questions for the quiz:", (noQuestions)=>{
+    rl.question("Enter the topic for the quiz:", (topic)=>{
+        main(noQuestions,topic);
+        rl.close();
+    });
+
+});
+// main();
 
 //system instruction: define the behvoior 
 //content: tells what to do 
+
+
+
 
