@@ -10,8 +10,16 @@ const errorBox = document.getElementById("error-box");
 async function fetchFeedback() {
   showError(null);
   try {
-    // TODO 1: Use fetch(API_URL), check response.ok, parse JSON, and pass data to renderFeedback(data)
+    // TODO 3: Use fetch(API_URL), check response.ok, parse JSON, and pass data to renderFeedback(data)
     // Hint: Check fetchTasks() in TaskFlow!
+    const response = await fetch(API_URL,{
+      method:"GET"
+    });
+    if(!response.ok){
+      throw new Error("Failed to fetch feedbacks!");
+    }
+    const parsedData = await response.json();
+    renderFeedback(parsedData);
 
   } catch (err) {
     showError(err.message);
@@ -27,7 +35,7 @@ async function submitFeedback(e) {
   const message = messageInput.value.trim();
 
   try {
-    // TODO 2: Send a POST request to API_URL with JSON headers and body: { name, message }
+    // TODO 4: Send a POST request to API_URL with JSON headers and body: { name, message }
     // If !response.ok, read the error JSON from the server and throw new Error(errData.error)
     // On success: call form.reset() and fetchFeedback() to refresh the list!
 
