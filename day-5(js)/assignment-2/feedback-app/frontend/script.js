@@ -38,6 +38,20 @@ async function submitFeedback(e) {
     // TODO 4: Send a POST request to API_URL with JSON headers and body: { name, message }
     // If !response.ok, read the error JSON from the server and throw new Error(errData.error)
     // On success: call form.reset() and fetchFeedback() to refresh the list!
+    const response = await fetch(API_URL,{
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name:name, message:message })
+    });
+    if(!response.ok){
+      const errorData = await response.json();
+      throw new Error("Failed to submit feedback!" + errorData.error);
+    }
+    form.reset();
+    await fetchFeedback();
+    
 
   } catch (err) {
     showError(err.message);
