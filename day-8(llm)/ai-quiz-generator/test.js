@@ -25,6 +25,13 @@ async function main(){
         contents: prompt
     });
     console.log(response.text);
+    const response2=await ai.models.generateContent({
+        model:'gemini-3.1-flash-lite',
+        contents:"what color is it?"
+
+    });
+    console.log(response2.text);
+    //here the models response is not recorded hence the second response asked for the context
 }
 main();
 
