@@ -1,11 +1,14 @@
 import 'dotenv/config';
 import {GoogleGenAI} from '@google/genai';
+import fs from 'fs';
 
 
 
+const imagePath='/Users/tejas/Desktop_Backup/WLiT/day-2/day-8(llm)/ai-quiz-generator/images/note.jpg';
+const imageData=fs.readFileSync(imagePath).toString('base64');
 
-
-const sysInstructions = `"You are a helpful quiz generator. Create multiple choice questions with 4 options and the questions should be clear and concise."`;
+const sysInstructions = `"You are a helpful quiz generator. Create multiple choice questions with 4 options and the questions should be clear and concise.
+Create questions based on the content of the image and the topic provided. The questions should be relevant to the topic and should test the understanding of the content in the image. Each question should have one correct answer and three distractors. The difficulty level of each question should be specified as easy, medium, or hard."`;
 // const prompt = `Create a ${noQuestions} questions quiz  on topic ${topic}`;
 
 const resSchema={
@@ -33,8 +36,12 @@ const configuration = {
             responseMimeType:"application/json",
             responseSchema:resSchema
         };
+// const prompt = [
+//     {text: `Attached is an image of a note, generate ${noQuestions} questions quiz on the topic ${topic} .`},
+//     {inlineData: {mimeType: 'image/jpg', data: imageData}}
+// ];
 
-        
+
 // 1. Initialize Gemini
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY,
@@ -45,7 +52,10 @@ const ai = new GoogleGenAI({
 async function main(noQuestions,topic){
     const response = await ai.models.generateContent({
         model:'gemini-3.1-flash-lite',
-        contents:`Create a ${noQuestions} questions quiz  on topic ${topic}`,
+        contents:[
+                    {text: `Attached is an image of a note, generate ${noQuestions} questions quiz. .`},
+                    {inlineData: {mimeType: 'image/jpg', data: imageData}}
+                ],
         config:configuration
         
 
@@ -81,10 +91,11 @@ const rl = readline.createInterface({
 });
 
 rl.question("Enter the number of questions for the quiz:", (noQuestions)=>{
-    rl.question("Enter the topic for the quiz:", (topic)=>{
-        main(noQuestions,topic);
+    
+
+        main(noQuestions);
         rl.close();
-    });
+    
 
 });
 // main();
