@@ -17,21 +17,30 @@ const prompt = [
 ];
 //model process text and images differently hence both text and image data are sent in an array of objects
 
-
+const followupRequest = ["what color is the girls teeth?"];
 
 async function main(){
+    const history = []; //the whole convo history
+    history.push({role:'user',parts:prompt});
     const response = await ai.models.generateContent({
-        model:'gemini-3.1-flash-lite',
-        contents: prompt
+        model:'gemini-3.5-flash-lite',
+        contents: history
     });
     console.log(response.text);
-    const response2=await ai.models.generateContent({
-        model:'gemini-3.1-flash-lite',
-        contents:"what color is it?"
+    history.push({role:'model',parts : [{text:response.text}]});
+
+    for(const followUp of followupRequest){
+        history.push({role:'user',parts:[{text:followUp}]});
+        const response2=await ai.models.generateContent({
+        model:'gemini-3.5-flash-lite',
+        contents:history
 
     });
     console.log(response2.text);
-    //here the models response is not recorded hence the second response asked for the context
+    history.push({role:'model',parts:[{text:response2.text}]});
+    }
+
+   
 }
 main();
 
