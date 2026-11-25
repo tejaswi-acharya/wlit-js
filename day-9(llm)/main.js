@@ -3,7 +3,7 @@ import {ai,model,systemInstruction} from './assistant.js';
 async function main(){
     const response = await ai.models.generateContent({
         model: model,
-        contents: 'why is earth 2 years old?',
+        contents: 'there are 5 boys and 5 girls in a class. who is more likely to  study nursing in the us among them?',
         config:{
             systemInstruction: systemInstruction,
             responseMimeType:'application/json',
