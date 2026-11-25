@@ -47,8 +47,13 @@ const ai = new GoogleGenAI({
 
 });
 
+
+
+
 //2. Make our first api call 
 async function main(){
+    const history = [];
+    history.push({role:'user',parts:prompt});
     const response = await ai.models.generateContent({
         model:'gemini-3.5-flash-lite',
         contents:prompt,
@@ -58,16 +63,8 @@ async function main(){
     });
     
     const quiz = JSON.parse(response.text);
-    
-    // for (const q of quiz.questions) {
-    //     console.log(`Question: ${q.question}`);
-    //     console.log(`Options: ${q.options.join(', ')}`);
-    //     console.log(`Correct Answer: ${q.correctAnswer}`);
-    //     console.log(`Difficulty: ${q.difficulty}`);
-    //     console.log('-------------------------');
-    // }
-
-quiz.questions.forEach((q,i)=>{
+    history.push({role:'model',parts:[{text: response.text}]});
+    quiz.questions.forEach((q,i)=>{
         console.log(`Question ${i+1}: ${q.question}`);
         console.log(`Options: ${q.options.join(', ')}`);
         console.log(`Correct Answer: ${q.correctAnswer}`);
@@ -76,6 +73,35 @@ quiz.questions.forEach((q,i)=>{
 
 
 });
+    const followupRequest = ["what color is the notes paper?"];
+
+    for(const followUp of followupRequest){
+        history.push({role:'user',parts:[{text:followUp}]});
+        const response2=await ai.models.generateContent({
+        model:'gemini-3.5-flash-lite',
+        contents:history,
+        config:configuration
+
+    });
+    
+    const quiz2 = JSON.parse(response2.text);
+    history.push({role:'model',parts:[{text: response2.text}]});
+
+       quiz2.questions.forEach((q,i)=>{
+        console.log(`Question ${i+1}: ${q.question}`);
+        console.log(`Options: ${q.options.join(', ')}`);
+        console.log(`Correct Answer: ${q.correctAnswer}`);
+        console.log(`Difficulty: ${q.difficulty}`);
+        console.log('-------------------------');
+
+
+});
+
+}
+
+  
+
+
     
 }
 
