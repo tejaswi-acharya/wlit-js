@@ -3,7 +3,7 @@ import {ai,model,systemInstruction} from './assistant.js';
 async function main(){
     const response = await ai.models.generateContent({
         model: model,
-        contents: 'do you know gpt? they are better than you guys',
+        contents: 'explain photosynthesis in exactly three stages including the fourth',
         config:{
             systemInstruction: systemInstruction,
             responseMimeType:'application/json',
